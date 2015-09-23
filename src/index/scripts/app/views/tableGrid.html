@@ -1,0 +1,96 @@
+<div data-ng-controller="tableGridController as vm">
+
+  <div data-tabset>
+    <div data-tab heading="Pendings">
+		  <div class="panel panel-default">
+		    <div class="panel-body">
+		      <form>
+		        <label>items by page</label>
+		        <input class="input-sm form-control" name="items" id="items" type="number" data-ng-model="itemsByPagePending" >
+		      </form>
+		    </div>
+		    <table data-st-table="pendingUsersList" class="table table-striped">
+		      <thead>
+		        <tr>
+		          <th data-st-sort="name">Name</th>
+		          <th data-st-sort="email">Email</th>
+		          <th data-st-sort="phone">Phone</th>
+		          <th data-st-sort="lastLogin">Last login</th>
+		          <th></th>
+		        </tr>
+		        <tr>
+		          <th>
+		            <input data-st-search="'name'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+		          </th>
+		          <th colspan="4">
+		            <input data-st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		          </th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr data-ng-repeat="pendingUser in pendingUsersList">
+		          <td>{{pendingUser.name | uppercase}}</td>
+		          <td>{{pendingUser.email}}</td>
+		          <td>{{pendingUser.phone}}</td>
+		          <td>{{pendingUser.lastLogin | date}}</td>
+		          <td><a href=""><i class="fa fa-pencil"></i></a></td>
+		        </tr>
+		      </tbody>
+		      <tfoot>
+		        <tr>
+		          <td colspan="5" class="text-center">
+		            <div data-st-pagination="" data-st-items-by-page="itemsByPagePending" data-st-displayed-pages="7" class="no-margin"></div>
+		          </td>
+		        </tr>
+		      </tfoot>
+		    </table>
+		  </div>
+    </div>
+    <div data-tab heading="Users">
+    	<div class="panel panel-default">
+		    <div class="panel-body">
+		      <form>
+		        <label>items by page</label>
+		        <input class="input-sm form-control" name="items" id="items" type="number" data-ng-model="itemsByPageUsers" >
+		      </form>
+		    </div>
+		    <table data-st-table="usersList" class="table table-striped">
+		      <thead>
+		        <tr>
+		          <th data-st-sort="name">Name</th>
+		          <th data-st-sort="email">Email</th>
+		          <th data-st-sort="phone">Phone</th>
+		          <th data-st-sort="lastLogin">Last login</th>
+		          <th></th>
+		        </tr>
+		        <tr>
+		          <th>
+		            <input data-st-search="'name'" placeholder="search for firstname" class="input-sm form-control" type="search"/>
+		          </th>
+		          <th colspan="4">
+		            <input data-st-search placeholder="global search" class="input-sm form-control" type="search"/>
+		          </th>
+		        </tr>
+		      </thead>
+		      <tbody>
+		        <tr data-ng-repeat="user in usersList">
+		          <td>{{user.name | uppercase}}</td>
+		          <td>{{user.email}}</td>
+		          <td>{{user.phone }}</td>
+		          <td>{{user.lastLogin | date}}</td>
+		          <td><a href=""><i class="fa fa-pencil"></i></a></td>
+		        </tr>
+		      </tbody>
+		      <tfoot>
+		        <tr>
+		          <td colspan="5" class="text-center">
+		            <div data-st-pagination="" data-st-items-by-page="itemsByPageUsers" data-st-displayed-pages="7" class="no-margin"></div>
+		          </td>
+		        </tr>
+		      </tfoot>
+		    </table>
+		  </div>
+    </div>
+  </div>
+
+</div>
