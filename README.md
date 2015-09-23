@@ -1,1 +1,1 @@
-# quotes-feed
+# sample smart table grid
