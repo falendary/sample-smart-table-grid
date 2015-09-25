@@ -1,7 +1,7 @@
-<div data-ng-controller="tableGridController as vm">
+<div data-ng-controller="userManagerController as vm">
 
   <div data-tabset>
-    <div data-tab heading="Pendings">
+    <div data-tab data-heading="Pendings">
 		  <div class="panel panel-default">
 		    <div class="panel-body">
 		      <form>
@@ -28,12 +28,12 @@
 		        </tr>
 		      </thead>
 		      <tbody>
-		        <tr data-ng-repeat="pendingUser in pendingUsersList">
+		        <tr data-ng-repeat="pendingUser in vm.pendingUsersList">
 		          <td>{{pendingUser.name | uppercase}}</td>
 		          <td>{{pendingUser.email}}</td>
 		          <td>{{pendingUser.phone}}</td>
 		          <td>{{pendingUser.lastLogin | date}}</td>
-		          <td><a href=""><i class="fa fa-pencil"></i></a></td>
+		          <td><a href="/admin/userprofile/{{pendingUser._id}}"><i class="fa fa-pencil"></i></a></td>
 		        </tr>
 		      </tbody>
 		      <tfoot>
@@ -73,12 +73,12 @@
 		        </tr>
 		      </thead>
 		      <tbody>
-		        <tr data-ng-repeat="user in usersList">
+		        <tr data-ng-repeat="user in vm.usersList">
 		          <td>{{user.name | uppercase}}</td>
 		          <td>{{user.email}}</td>
 		          <td>{{user.phone }}</td>
 		          <td>{{user.lastLogin | date}}</td>
-		          <td><a href=""><i class="fa fa-pencil"></i></a></td>
+		          <td><a href="/admin/userprofile/{{user._id}}"><i class="fa fa-pencil"></i></a></td>
 		        </tr>
 		      </tbody>
 		      <tfoot>

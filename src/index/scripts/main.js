@@ -17,7 +17,13 @@
 
 	app.config(['$stateProvider', '$urlRouterProvider', require('./app/router')]);
 
-	app.service('tableGridService', ['Restangular', require('./app/services/tableGridService')]);
-	app.controller('tableGridController', ['$scope', 'tableGridService', require('./app/controllers/tableGridController')]);
+	app.run([function(){
+		console.log('App started!');
+	}]);
+
+	app.service('userManagerService', ['Restangular', require('./app/services/userManagerService')]);
+	app.controller('userManagerController', ['$scope', 'userManagerService', require('./app/controllers/userManagerController')]);
+
+	require('./app/templateCache/templates.min');
 
 }());

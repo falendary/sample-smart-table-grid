@@ -12,9 +12,9 @@
 				templateUrl: 'interface.html',
 				abstract: true
 			})
-			.state('interface.tablegrid', {
+			.state('interface.userManager', {
 				url: '/',
-				templateUrl: 'tableGrid.html'
+				templateUrl: 'userManager.html'
 			});
 
 		$urlRouterProvider.otherwise('/');
